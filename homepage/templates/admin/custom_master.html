@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %}
+
+{% block access_control %}
+{% if session.is_authenticated %}
+<div class="nav navbar-nav navbar-right">
+    <button type="button" class="btn btn-default navbar-btn dropdown-toggle" 
+        data-toggle="dropdown" aria-expanded="false" >
+    <span class="glyphicon glyphicon-user"></span> {{ session.user }} <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <li><a href="{{ url_for('admin.logout') }}">Log out</a></li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

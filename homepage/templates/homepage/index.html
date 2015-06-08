@@ -1,0 +1,22 @@
+{% extends "homepage/base.html" %}
+{% set active_page = "index" %}
+
+{% block title %}Jackson Wu{% endblock %}
+
+{% block content %}
+<div id="index">
+  <div class="heading">
+    <h1 class="title">Hello, I'm Jackson</h1>
+    <p class="secondary">I'm a student interested in building interesting web
+    applications, playing with graphics, and making use of big data.</p>
+  </div>
+  <div id="icons">
+    <a id="github-icon" href="https://github.com/epochus">
+    <span class="fa fa-github-square fa-3x"></span>
+    </a>
+    <a id="email-icon" href="mailto:contact@jacksonwu.net">
+    <span class="fa fa-envelope-o fa-3x"></span>
+    </a>
+  </div>
+</div>
+{% endblock %}

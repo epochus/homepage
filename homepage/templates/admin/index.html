@@ -1,0 +1,71 @@
+{% extends 'admin/master.html' %}
+
+{% block title %}Jackson Wu :: Admin{% endblock %}
+
+{% block head %}
+<style>
+  .error           { background:#f0d6d6; padding:0.5em; margin:0.5em 0;
+                      border:1px solid #f64747; text-align:center; }
+  .success         { background:#99eb99; padding:0.5em; margin:0.5em 0;
+                      border:1px solid #54cb41; text-align:center; }
+  .separation      { margin-top:4em; }
+  .btn-align       { text-align:center; }
+ </style>
+{% endblock %}
+
+{% block messages %}
+  {%- with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="{{ category }}">{{ message }}</div>
+    {% endfor %}
+   {% endwith -%}
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="row-fluid">
+  <div class="text-center">
+    {% if session.is_authenticated %}
+    <div>
+      <h1>Welcome, {{ session.user }}!</h1>
+      <p class="lead">
+        This Admin console allows you to manage database models
+      </p>
+    </div>
+    {% else %}
+    <h1 class="col-xs-7 col-xs-offset-3">Log In</h1>
+    <div class="separation">
+      <form class="form-horizontal" method="POST" action="">
+        {{ form.hidden_tag() if form.hidden_tag }}
+        <div class="form-group form-group-lg row">
+          <div class="col-xs-7 col-xs-offset-3">
+            <div class="sr-only">{{ form.username.label }}</div>
+            <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+              {{ form.username(placeholder=form.username.label.text, class_='form-control') }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-group-lg row">
+          <div class="col-xs-7 col-xs-offset-3">
+            <div class="sr-only">{{ form.password.label }}</div>
+            <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+              {{ form.password(placeholder=form.password.label.text, class_='form-control') }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-7 col-xs-offset-3">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock body %}
+

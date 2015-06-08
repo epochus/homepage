@@ -1,0 +1,97 @@
+{% extends "homepage/base.html" %}
+{% set active_page = "resume" %}
+
+{% block title %}Jackson Wu - Resume{% endblock %}
+
+{% block content %}
+  <div id="resume">
+    <section>
+      <h2 class="resume-heading">Education</h2>
+        <hr>
+        <h3>
+            BS, University of Texas at Austin | Austin, TX
+        </h3>
+        <ul>
+          <li>
+          BSc in Computer Science (Expected Graduation: May 2016)
+          </li>
+        </ul>
+    </section>
+
+    <section>
+      <h2 class="resume-heading">Projects</h2>
+        <hr>
+        <h3>
+          jacksonwu.net
+        </h3>
+        <ul>
+          <li>
+            Developed and designed a personal website using Flask, SQLite, and Pure.css
+          </li>
+          <li>
+            Implemented basic admin system that can easily modify projects and notes
+          </li>
+        </ul>
+
+        <h3>
+          15 Puzzle Solver
+        </h3>
+        <ul>
+          <li>
+            Created an interactive web version of the Fifteen puzzle game
+          </li>
+          <li>
+            Built user interface with HTML5 Canvas and Javascript
+          </li>
+        </ul>
+
+        <h3>
+          Body Detection (CS378: Autonomous Intelligent Robotics)
+        </h3>
+        <ul>
+          <li>
+            Developed package for ROS (Robot Operating System) using C++
+          </li>
+          <li>
+            Implemented application features such as transforms detection and audio output
+          </li>
+        </ul>
+
+        <h3>
+          RA-S-al-Ghul (IEEE Robotics and Automation Society)
+        </h3>
+        <ul>
+          <li>
+            Designed and built an autonomous robot in a team of four
+          </li>
+          <li>
+            Developed features in C using the Stellaris Launchpad controller
+          </li>
+        </ul>
+    </section>
+
+    <section>
+      <h2 class="resume-heading">Skills</h2>
+      <hr>
+      <h3>Programming Languages:</h3>
+        <ul>
+          <li><span>Proficient in: </span>Python, C</li>
+          <li><span>Familiar with: </span>
+            Java, JavaScript, SQL</li>
+          <li><span>Exposure to: </span>C++, R</li>
+        </ul>
+      <h3>Notable Tools and Technologies:</h3>
+        <ul>
+          <li><span>Web: </span>
+            HTML, CSS, jQuery, Flask, Django, Jinja2, SQLAlchemy</li>
+          <li><span>Databases: </span>
+            SQLite, Oracle</li>
+          <li><span>Platforms: </span>
+            Amazon Web Services, OpenShift</li>
+          <li><span>Other: </span>
+            Git, Hadoop, Spark</li>
+        </ul>
+    </section>
+  </div>
+{% endblock %}
+

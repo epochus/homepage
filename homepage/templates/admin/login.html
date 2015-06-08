@@ -1,0 +1,21 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+<div class="row-fluid">
+    <h1>Login</h1>
+
+    <form action="{{ url_for('login') }}" method="post" class="login-form">
+      <div class="field">
+        <label for="username">Username: </label>
+        <input type="text" name="username">
+      </div>
+      <div class="field">
+        <label for="password">Password: </label>
+        <input type="password" name="password">
+      </div>
+      <div class="align">
+        <input type=submit class="button" value=Login>
+      </div>
+    </form>
+
+</div>
+{% endblock body %}
