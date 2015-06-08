@@ -1,10 +1,15 @@
+"""
+    setup.py
+    --------
+    Manages application metadata.
+
+"""
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='jacksonwu.net',
       version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
+      description='Personal Website',
+      author='Jackson Wu',
+      author_email='jacksonwu.zg@gmail.com',
+      url='http://jacksonwu.net',
      )
