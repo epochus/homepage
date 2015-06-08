@@ -19,7 +19,8 @@ def validate_login(form, field):
 
 class LoginForm(Form):
     username = StringField('Username', [InputRequired("Username is required")])
-    password = PasswordField('Password', [InputRequired("Password is required"),                              validate_login])
+    password = PasswordField('Password', [InputRequired("Password is required"),
+                              validate_login])
 
 def flash_errors(form):
     for field, errors in form.errors.items():
