@@ -7,7 +7,7 @@
 from flask import request, session, redirect, url_for, \
         render_template, flash, abort
 from sqlalchemy import exc
-from homepage import app
+from homepage import app, db
 from homepage.models import Project, Post, Tag
 
 
