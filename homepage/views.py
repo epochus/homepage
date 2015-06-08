@@ -54,3 +54,7 @@ def page(post_id, title):
 @app.errorhandler(404)
 def not_found(error):
     return render_template('homepage/notfound.html'), 404
+
+def init_db():
+    db.drop_all()
+    db.create_all()

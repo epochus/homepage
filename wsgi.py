@@ -13,7 +13,7 @@ import importlib
 try:
     virtenv = os.path.join(os.environ.get('OPENSHIFT_PYTHON_DIR', '.'), 'virtenv')
     python_version = 'python' + str(sys.version_info[0]) + '.' + str(sys.version_info[1])
-    os.environ['PYTOHN_EGG_CACHE'] = os.path.join(virtenv, 'lib', python_version, 'site-packages')
+    os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib', python_version, 'site-packages')
     virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
     exec(open(virtualenv).read(), dict(__file___=virtualenv))
 except IOError:
