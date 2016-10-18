@@ -11,7 +11,7 @@ DEBUG = True
 SECRET_KEY = os.environ.get('FLASK_SECRET_KEY', 'default-secret-key')
 USERNAME = os.environ.get('FLASK_USERNAME', 'admin')
 SALT = os.environ.get('FLASK_SALT', 'default-pw-salt')
-PASSWORD = os.environ.get('FLASK_PASSWORD', ('pbkdf2:sha1:1000$CiSKzpGa$1953516c587963ce1c26454dd141ffbf35aa7465'))
+PASSWORD = os.environ.get('FLASK_PASSWORD', ('pbkdf2:sha1:1000$FGzDs5x4$d690b0ac48b4775a132a6e491aa25e90350ef00a'))
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_DIR = os.path.join(PROJECT_DIR, 'homepage')
