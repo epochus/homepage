@@ -16,13 +16,9 @@ class Project(db.Model):
   title = db.Column(db.String(80))
   description = db.Column(db.Text)
   url = db.Column(db.String(255))
-  code = db.Column(db.String(255))
-  text = db.Column(db.String(255))
-  image = db.Column(db.String(255))
 
   def __repr(self):
       return '(Project: {})'.format(self.title)
-
 
 tags = db.Table('tags',
         db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
