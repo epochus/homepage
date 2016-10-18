@@ -15,10 +15,6 @@ from homepage.models import Project, Post, Tag
 def index():
     return render_template('homepage/index.html')
 
-@app.route('/resume')
-def resume():
-    return render_template('homepage/resume.html')
-
 @app.route('/projects')
 def projects():
     error = False
@@ -29,27 +25,6 @@ def projects():
         projects = []
 
     return render_template('homepage/projects.html', projects=projects, error=error)
-
-@app.route('/notes')
-def notes():
-    error = False
-    try:
-        posts = Post.query.order_by(Post.pub_date.desc()).all()
-    except exc.SQLAlchemyError:
-        error = True
-        posts = []
-
-    return render_template('homepage/notes.html', posts=posts, error=error)
-
-@app.route('/notes/<int:post_id>/<title>')
-def page(post_id, title):
-    try:
-        post = Post.query.get_or_404(post_id)
-    except exc.SQLAlchemyError:
-        post = []
-        abort(404)
-
-    return render_template('homepage/page.html', post=post)
 
 @app.errorhandler(404)
 def not_found(error):

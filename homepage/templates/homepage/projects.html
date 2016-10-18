@@ -1,6 +1,5 @@
 {% extends "homepage/base.html" %}
 {% set active_page = "projects" %}
-
 {% block title %}Jackson Wu - Projects{% endblock %}
 
 {% block content %}
@@ -11,8 +10,6 @@
   </div>
   {% else %}
     <div class="heading">
-        <h1 class="title">Projects</h1>
-        <p class="secondary">Things I've created or contributed</p>
     </div>
     {% if projects|length < 1 %}
       <div class="message">
@@ -20,27 +17,11 @@
       </div>
     {% else %}
     {% for project in projects %}
-    <div class="pure-g proj">
-      <div class="pure-u-1 pure-u-md-8-24 pure-img">
-        <span class="img-box">
-          <img src="{{ project.image }}" alt="{{ project.title }}">
-        </span>
-      </div>
-      <div class="pure-u-1 pure-u-md-14-24 proj-info">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        {% if project.url %}
-        <a class="pure-button pure-button-primary" href="{{ project.url }}">Project</a>
-        {% endif %}
-        {% if project.code %}
-        <a class="pure-button pure-button-primary" href="{{ project.code }}">Code</a>
-        {% endif %}
-        {% if project.text %}
-        <a class="pure-button pure-button-primary" href="{{ project.text }}">Text</a>
-        {% endif %}
-      </div>
+    <div>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <p>{{ project.url }}</p>
     </div>
-    <hr />
     {% endfor %}
     {% endif %}
   {% endif %}

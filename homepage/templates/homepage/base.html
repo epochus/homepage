@@ -8,45 +8,23 @@
     <meta name="author" content="Jackson Wu">
 
     <title>{% block title %}Jackson Wu{% endblock %}</title>
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-<div id="container">
-  <div id="wrapper">
-    <header id="site-nav" role="banner">
-      <h3 id="site-name">
-        <a {% if request.path == '/' %}class="active"{% endif %} href="{{ url_for('index') }}">Jackson Wu</a>
-      </h3>
-      <nav class="pure-menu pure-menu-horizontal" role="navigation">
-        {% set nav_bar = [
-          (url_for('projects'), 'projects', 'Projects'),
-          (url_for('notes'), 'notes', 'Notes'),
-        ] -%}
-        {% set active_page = active_page|default('index') -%}
-        <ul class="pure-menu-list">
-          {% for url, page, name in nav_bar %}
-            <li class="pure-menu-item">
-            <a href="{{ url|e }}" {% if page == active_page %}class="active pure-menu-link"{% else %}class="pure-menu-link"{% endif %}>{{ name|e }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </header> 
-    <main role="main content">
-      {% block content %}
-      {% endblock %}
+    <header role="banner">
+        <nav class="h4" role="navigation">
+            <a {% if request.path == '/' %} class="active" {% endif %} 
+            href="{{ url_for('index') }}">About</a> |
+            <a {% if request.path == '/projects' %}class="active"{% endif %} 
+            href="{{ url_for('projects') }}">Projects</a>
+        </nav>
+    </header>
+    <main id="content" role="content">
+        {% block content %}
+        {% endblock %}
     </main>
-  </div>
-  <footer id="site-footer" role="copyright">
-    <p>
-    <small>&copy; <time datetime="2015">2015</time></small>
-    </p>
-  </footer>
-</div>
 </body>
 </html>

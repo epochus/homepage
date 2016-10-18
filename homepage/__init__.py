@@ -4,17 +4,13 @@
     Initialization of Flask application
 """
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.misaka import Misaka
+from flask_sqlalchemy import SQLAlchemy
 
 # Create application object
 app = Flask(__name__, instance_relative_config=True)
 
 # Load default configuration
 app.config.from_object('config.default')
-
-# Wrap Flask instance with Flask-Misaka
-Misaka(app)
 
 # Load non-VC configurations from instance folder
 # app.config.from_pyfile('instance.cfg', silent=True)
