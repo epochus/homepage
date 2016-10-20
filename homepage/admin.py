@@ -62,39 +62,18 @@ class AuthModelView(ModelView):
             return redirect(url_for('admin.login', next=request.url))
 
 class ProjectView(AuthModelView):
-    def _list_format_thumbnail(view, context, model, name):
-        if not model.image:
-            return ''
-        return Markup('<img src="{}" width="100" height="100">'.format(model.image))
-
+    """ Admin display for all projects """
     def _list_format_links(view, context, model, name):
-        project, code, text = '', '', ''
-        if model.url:
-            project = model.url
-        if model.code:
-            code = model.code
-        if model.text:
-            text = model.text
+        link = model.url
         return Markup(
-                ('<p><strong>Project: </strong>\n'
-                 '<a href="{project}" rel="external" target="_blank">{project}</a></p>\n'
-                 '<p><strong>Code: </strong>\n'
-                 '<a href="{code}" rel="external" target="_blank">{code}</a></p>\n'
-                 '<p><strong>Text: </strong>\n'
-                 '<a href="{text}" rel="external" target="_blank">{text}</a></p>\n'
-                ).format(project=project, text=text, code=code))
+                ('<a href="{url}" rel="external">{url}</a></p>\n'
+                ).format(url=link))
 
-    column_formatters = dict(image=_list_format_thumbnail,
-                             url=_list_format_links)
-    column_list = ('title', 'url', 'image')
-    column_labels = dict(url='URL(s)')
+    column_formatters = dict(url=_list_format_links)
+    column_list = ('title', 'description', 'url')
+    column_labels = dict(url='URL', text="Description")
     column_sortable_list = ('title',)
     column_searchable_list = ('title',)
-
-    form_args = dict(url=dict(label='Project/Demo URL'),
-                     code=dict(label='Code Repo URL'),
-                     text=dict(label='Text URL'),
-                     image=dict(label='Image URL'))
 
 class PostView(AuthModelView):
     column_list = ('title', 'pub_date', 'is_published', 'tags')
