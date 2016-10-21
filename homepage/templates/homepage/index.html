@@ -1,7 +1,17 @@
 {% extends "homepage/base.html" %}
-{% set active_page = "index" %}
+{% set active_page = "home" %}
+
 {% block content %}
-<h2>Hi, I'm Jackson Wu.</h2>
-<a id="a_code" href="https://github.com/epochus">github</a>
-<a id="a_mail" href="mailto:jacksonwu.zg@gmail.com">contact</a>
+<section id="home">
+  <div class="jumbotron jumbotron-home">
+    <div class="container">
+      <h1 class="page-title">Jackson Wu</h1>
+    </div>
+  </div>
+  <div class="container">
+    <a id="github" href="https://github.com/epochus" target="_blank" title="Github">github</a> //
+    <a id="contact" href="mailto:jacksonwu.zg@gmail.com" title="Contact">contact</a>
+
+  </div>
+</section>
 {% endblock %}
