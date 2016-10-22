@@ -12,6 +12,9 @@ app = Flask(__name__, instance_relative_config=True)
 # Load default configuration
 app.config.from_object('config.default')
 
+# Remove significant overhead 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 # Load non-VC configurations from instance folder
 # app.config.from_pyfile('instance.cfg', silent=True)
 

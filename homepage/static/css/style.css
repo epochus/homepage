@@ -104,3 +104,20 @@ h2 > a:hover:before {
 .icon-size {
     font-size: .65em;
 }
+
+.description {
+    margin-bottom: 0;
+}
+
+.tags {
+    font-size:0.85em;
+}
+
+.message {
+    text-align: center;
+}
+
+.error {
+    margin-top: 4em;
+    text-align: center;
+}

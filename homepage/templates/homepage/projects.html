@@ -13,13 +13,13 @@
   <div class="container">
     <div class="row">
       {% if error %}
-      <div class="message">
-        <h3>My projects are unavailable at the moment.</h3>
+      <div class="message project-item">
+        <h2>No projects can be accessed.</h2>
       </div>
       {% else %} 
         {% if projects|length < 1 %} 
-        <div class="message">
-          <h3>No projects have been added yet...</h3>
+        <div class="message project-item">
+          <h2>No projects have been added.</h2>
         </div>
         {% else %} 
         {% for project in projects %}
@@ -29,7 +29,12 @@
               <span class="glyphicon glyphicon-new-window icon-size" aria-hidden="true"></span>
               {{ project.title }}</a>
           </h2>
-          <p>{{ project.description }}</p>
+          <p class="description">{{ project.description }}</p>
+          <p class="tags">
+            {% for tag in project.tags %}
+              <span class="label label-default">{{ tag }}</span>
+            {% endfor %}
+          </p>
         </div>
         {% endfor %} 
         {% endif %} 
