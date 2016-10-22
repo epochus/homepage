@@ -14,12 +14,12 @@
     <div class="row">
       {% if error %}
       <div class="message project-item">
-        <h2>No projects can be accessed.</h2>
+        <h2>ERROR: Projects cannot be accessed.</h2>
       </div>
       {% else %} 
         {% if projects|length < 1 %} 
         <div class="message project-item">
-          <h2>No projects have been added.</h2>
+          <h2>No projects have not been added.</h2>
         </div>
         {% else %} 
         {% for project in projects %}
