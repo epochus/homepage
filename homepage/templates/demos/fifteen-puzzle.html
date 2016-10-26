@@ -1,0 +1,37 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+<section id="project-fifteen">
+  <head>
+    <title>{% block title %}Fifteen{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='demos/fifteen-puzzle/fifteen.css') }}">
+  </head>
+
+    <h1 style="text-align:center">15-Puzzle</h1>
+    <canvas id="canvas" width=405 height=405>
+      This browser does not support the HTML5 canvas element.
+    </canvas>
+    <center>
+    <div class="row">
+      <br>
+      <button class="btn btn-success btn-md" onclick="scramble()">Scramble</button>
+      <button class="btn btn-success btn-md" onclick="resetBoard()">Reset</button>
+      <form action="javascript:createPost()">
+        <button class="btn btn-success btn-md" type="submit">Solve</button>
+      </form>
+    </div>
+    </center>
+
+    <br>
+    <div  class="container">
+      <p class="proj-text"><strong>How to play:</strong> Use the arrow keys to move the empty space 
+        to the top left corner and place the rest of the numbers in ascending order. </p>
+      <p class="proj-text">View the <a class="link" href="https://github.com/epochus/fifteen-puzzle">source code</a></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='demos/fifteen-puzzle/fifteen.js') }}"></script>
+</section>
+{% endblock content %}

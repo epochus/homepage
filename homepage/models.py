@@ -25,6 +25,7 @@ class Project(db.Model):
     title = db.Column(db.String(80))
     url = db.Column(db.String(4000))
     description = db.Column(db.Text)
+    
     tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'))
 
     tags = db.relationship('Tag', secondary=tags,

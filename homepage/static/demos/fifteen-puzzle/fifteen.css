@@ -1,0 +1,31 @@
+#canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #ecf0f1;
+  border: 3px outset #778899;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background: slategray;
+  border-color: slategray;
+  cursor: default;
+}
+
+form {
+  display: inline;
+}
+
+.proj-text {
+  text-align: center;
+}
+
+a.link {
+    text-decoration: underline;
+}
