@@ -6,8 +6,7 @@
 """
 import os
 
-DEBUG = True
-#DEBUG = os.environ.get('FLASK_DEBUG', False)
+DEBUG = os.environ.get('FLASK_DEBUG', True)
 SECRET_KEY = os.environ.get('FLASK_SECRET_KEY', 'default-secret-key')
 USERNAME = os.environ.get('FLASK_USERNAME', 'admin')
 SALT = os.environ.get('FLASK_SALT', 'default-pw-salt')
