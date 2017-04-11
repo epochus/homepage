@@ -32,7 +32,7 @@ def not_found(error):
 def projects():
     error = False
     try:
-        projects = Project.query.order_by(Project.id.desc()).all()
+        projects = Project.query.order_by(Project.rank).all()
     except exc.SQLAlchemyError:
         error = True
         projects = []
