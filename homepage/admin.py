@@ -75,9 +75,9 @@ class ProjectView(AuthModelView):
                 ).format(url=link))
 
     column_formatters = dict(url=_list_format_links)
-    column_labels = dict(title='Project Name', url='URL', description='Description', tags='Tag(s)')
-    column_list = ('title', 'description', 'url', 'tags')
-    column_sortable_list = ('title',)
+    column_labels = dict(rank='Sort', title='Project Name', url='URL', description='Description', tags='Tag(s)')
+    column_list = ('rank', 'title', 'description', 'url', 'tags')
+    column_sortable_list = ('rank', 'title',)
     column_searchable_list = ('title',)
 
 
